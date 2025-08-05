@@ -278,7 +278,7 @@ order_plot_data <- big_data %>%
 ####################### Recall #####################
 ####################################################
 
-recall <- read_excel("RecallTest_new.xlsx")
+recall <- read_excel("RecallTest.xlsx")
 
 recall_small <- recall %>% select(-c(`Room A`, `Room B`, `Room C`, RoomC,
                                      `Room D...8`, `Room D...9`, `Room D...10`,
@@ -733,3 +733,4 @@ int_model_recall3 <- lm(RecallMP ~ RecognitionMP_Artworks * RecognitionMP_Layout
 int_model_recall4 <- lm(RecallMP ~ RecognitionMP_Artworks + RecognitionMP_Layouts * OrderMP, data = minimal_big_data)
 compare_performance(int_model_recall1, int_model_recall2, int_model_recall3, int_model_recall4, rank=TRUE)
 summary(int_model_recall1)
+
